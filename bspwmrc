@@ -1,24 +1,29 @@
-#! /bin/sh
+#!/bin/sh
 
+# Detener y reiniciar sxhkd
 pkill sxhkd
 sxhkd &
 
-#--wallpaper_aleatorio--#
+# Establecer el fondo de pantalla aleatorio
 /home/angell/Imágenes/.wallpaper/random.sh
 
+# Establecer el diseño del teclado
 setxkbmap latam
-xrandr -s 1366x768  -r 60.00
 
+# Establecer la resolución de la pantalla
+xrandr -s 1366x768 -r 60.00
+
+# Reiniciar sxhkd si no está en ejecución
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-# nitrogen --restore &
+# Iniciar picom para efectos de transparencia
 picom -f &
+
+# Iniciar la barra de estado Polybar
 polybar example &
-# /home/angell/.eww/target/release/eww daemon &
 
-bspc rule -a Zathura state=tiled
-
-bspc monitor -d I II III IV V IV 
+# Configuración de BSPWM
+bspc monitor -d 1 2 3 4 5 6 
 
 bspc config border_width               2
 bspc config window_gap                 12
@@ -43,20 +48,30 @@ bspc config click_to_focus            true
 bspc config pointer_follows_focus     false
 bspc config pointer_follows_monitor   true
 
+# Regla para abrir cualquier ventana en el escritorio actual si no tiene otro definido
+bspc rule -a '*' desktop='focused' state=tiled
 
-#-------------Confing_windows_float----------------#
+# Regla para aplicaciones tiled en Zathura
+bspc rule -a Zathura state=tiled
+
+# Regla para aplicaciones tiled en floating
+bspc rule -a matplotlib state=floating
+bspc rule -a Mathematica state=floating
+bspc rule -a Tk state=floating
+
+# Reglas para asignar aplicaciones a escritorios específicos
+bspc rule -a kitty desktop=^1
+bspc rule -a Zathura desktop=^2
+bspc rule -a matplotlib desktop=^3
+bspc rule -a Mathematica desktop=^3
+bspc rule -a Tk desktop=^3
+bspc rule -a Com.github.xournalpp.xournalpp desktop=^4
+bspc rule -a org.gnome.Nautilus desktop=^4
+bspc rule -a discord desktop=^5
+bspc rule -a Brave-browser desktop=^6
 
 # xprop | grep WM_CLASS  # con este comando en la terminal se ve la <nombre_de_clase>:<nombre_de_instancia>
 # bspc rule -a <nombre_de_clase>:<nombre_de_instancia> state=floating
-bspc rule -a matplotlib:matplotlib state=floating
-bspc rule -a tk:Tk state=floating
-
-
-#--------Confing_areas_de_trabajo_float------------#
-bspc rule -a '*' state=floating desktop=^3
-bspc rule -a '*' state=floating desktop=^4
-
-
-# Agregar configuración de xss-lock con i3lock
-# xss-lock i3lock &
+# bspc rule -a matplotlib:matplotlib state=floating
+# bspc rule -a tk:Tk state=floating
 
