@@ -49,7 +49,7 @@ bspc config pointer_follows_monitor   true
 # xprop | grep WM_CLASS  # con este comando en la terminal se ve la <nombre_de_clase>:<nombre_de_instancia>
 # bspc rule -a <nombre_de_clase>:<nombre_de_instancia> state=floating
 bspc rule -a matplotlib:matplotlib state=floating
-bspc rule -a tk:tk state=floating
+bspc rule -a tk:Tk state=floating
 
 
 # Agregar configuración de xss-lock con i3lock
