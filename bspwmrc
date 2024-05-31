@@ -60,13 +60,16 @@ bspc rule -a Mathematica state=floating
 bspc rule -a Tk state=floating
 
 # Reglas para asignar aplicaciones a escritorios específicos
-bspc rule -a kitty desktop=^1
+bspc rule -a kitty:fullscreen desktop='^1' state=fullscreen fullscreen=on
+bspc rule -a kitty:floating desktop='^1' state=floating
+# bspc rule -a kitty desktop=^1
 bspc rule -a Zathura desktop=^2
 bspc rule -a matplotlib desktop=^3
 bspc rule -a Mathematica desktop=^3
 bspc rule -a Tk desktop=^3
 bspc rule -a Com.github.xournalpp.xournalpp desktop=^4
 bspc rule -a org.gnome.Nautilus desktop=^4
+bspc rule -a feh desktop=^5
 bspc rule -a discord desktop=^5
 bspc rule -a Brave-browser desktop=^6
 
