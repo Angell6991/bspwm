@@ -51,6 +51,9 @@ bspc config pointer_follows_monitor   true
 # Regla para abrir cualquier ventana en el escritorio actual si no tiene otro definido
 bspc rule -a '*' desktop='focused' state=tiled
 
+# Regla para aplicaciones tiled en fullscreen
+bspc rule -a kitty state=fullscreen
+
 # Regla para aplicaciones tiled en Zathura
 bspc rule -a Zathura state=tiled
 
@@ -60,9 +63,7 @@ bspc rule -a Mathematica state=floating
 bspc rule -a Tk state=floating
 
 # Reglas para asignar aplicaciones a escritorios específicos
-bspc rule -a kitty:fullscreen desktop='^1' state=fullscreen fullscreen=on
-bspc rule -a kitty:floating desktop='^1' state=floating
-# bspc rule -a kitty desktop=^1
+bspc rule -a kitty desktop=^1
 bspc rule -a Zathura desktop=^2
 bspc rule -a matplotlib desktop=^3
 bspc rule -a Mathematica desktop=^3
