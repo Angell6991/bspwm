@@ -62,6 +62,7 @@ bspc rule -a matplotlib state=floating
 bspc rule -a Mathematica state=floating
 bspc rule -a Tk state=floating
 bspc rule -a Eog state=floating
+bspc rule -a Com.github.xournalpp.xournalpp state=floating
 
 # Reglas para asignar aplicaciones a escritorios específicos
 bspc rule -a kitty desktop=^1
