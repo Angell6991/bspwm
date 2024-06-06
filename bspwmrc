@@ -58,7 +58,7 @@ bspc rule -a kitty state=fullscreen
 bspc rule -a Zathura state=tiled
 
 # Regla para aplicaciones tiled en floating
-bspc rule -a matplotlib state=floating
+bspc rule -a Matplotlib state=floating
 bspc rule -a Mathematica state=floating
 bspc rule -a Tk state=floating
 bspc rule -a Eog state=floating
@@ -67,7 +67,7 @@ bspc rule -a Com.github.xournalpp.xournalpp state=floating
 # Reglas para asignar aplicaciones a escritorios específicos
 bspc rule -a kitty desktop=^1
 bspc rule -a Zathura desktop=^2
-bspc rule -a matplotlib desktop=^3
+bspc rule -a Matplotlib desktop=^3
 bspc rule -a Mathematica desktop=^3
 bspc rule -a Tk desktop=^3
 bspc rule -a Eog desktop=^3
