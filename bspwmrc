@@ -5,7 +5,7 @@ pkill sxhkd
 sxhkd &
 
 # Establecer el fondo de pantalla aleatorio
-/home/angell/Imágenes/.wallpaper/random.sh
+# /home/angell/Imágenes/.wallpaper/random.sh
 
 # Establecer el diseño del teclado
 setxkbmap latam
@@ -71,6 +71,7 @@ bspc rule -a Matplotlib desktop=^3
 bspc rule -a Mathematica desktop=^3
 bspc rule -a Tk desktop=^3
 bspc rule -a Eog desktop=^3
+bspc rule -a Lightdm-gtk-greeter-settings desktop=^4
 bspc rule -a Com.github.xournalpp.xournalpp desktop=^4
 bspc rule -a org.gnome.Nautilus desktop=^4
 bspc rule -a discord desktop=^5
