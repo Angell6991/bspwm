@@ -22,6 +22,9 @@ picom -f &
 # Iniciar la barra de estado Polybar
 polybar example &
 
+# Iniciar el servicio de EWW widget
+~/.eww/target/release/eww daemon &
+
 # Configuración de BSPWM
 bspc monitor -d 1 2 3 4 5 6 
 
