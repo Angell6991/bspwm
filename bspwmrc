@@ -20,7 +20,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 picom -f &
 
 # Iniciar la barra de estado Polybar
-polybar example &
+# polybar example &
 
 # Iniciar el servicio de EWW widget
 ~/.eww/target/release/eww daemon &
