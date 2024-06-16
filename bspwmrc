@@ -24,6 +24,7 @@ picom -f &
 
 # Iniciar el servicio de EWW widget
 ~/.eww/target/release/eww daemon &
+~/.eww/target/release/eww open example &
 
 # Configuración de BSPWM
 bspc monitor -d 1 2 3 4 5 6 
